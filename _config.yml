@@ -22,6 +22,7 @@ description: A site for my projects.
 navbar-links:
   Resources:
     - Learn markdown: "http://www.markdowntutorial.com/"
+    - Decision Maker: "http://www.sam-i-am.com/play/5k/decisions/"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
