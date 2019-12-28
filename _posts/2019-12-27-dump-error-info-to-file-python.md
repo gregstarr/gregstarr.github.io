@@ -4,7 +4,6 @@ author: gstarr
 categories:
   - Python
 date: 2019-12-27T23:11:59.934Z
-thumbnail: /assets/uploads/capture.png
 ---
 Call the following function inside an exception handler to collect the error and dump all of the relevant info to a file called `error.txt`. This includes the full stack trace. Very helpful!
 

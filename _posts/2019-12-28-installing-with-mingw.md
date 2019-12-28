@@ -1,7 +1,7 @@
 ---
 layout: post
-published: false
 title: installing with mingw
+author: gstarr
 ---
 ## Install a program with mingw
 
