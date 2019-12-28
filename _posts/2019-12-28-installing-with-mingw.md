@@ -8,7 +8,7 @@ author: gstarr
 
 ### 1) Open MinGW shell
 
-```shell
+```cmd
 C:\MinGW\msys\1.0\msys.bat
 ```
 
