@@ -8,7 +8,7 @@ thumbnail: /assets/uploads/capture.png
 ---
 Call the following function inside an exception handler to collect the error and dump all of the relevant info to a file called `error.txt`. This includes the full stack trace. Very helpful!
 
-```
+```python
 def dump_error(timestamped_dir):
     exc_type, exc_value, exc_traceback = sys.exc_info()
     traceback.print_tb(exc_traceback)
@@ -45,4 +45,4 @@ def dump_error(timestamped_dir):
 ```
 
 
-![](capture.png)
+![](/assets/capture.png)
