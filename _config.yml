@@ -20,6 +20,7 @@ description: A site for my projects.
 
 # List of links in the navigation bar
 navbar-links:
+  Links: "links.md"
   Resources:
     - Learn markdown: "http://www.markdowntutorial.com/"
     - Decision Maker: "http://www.sam-i-am.com/play/5k/decisions/"
