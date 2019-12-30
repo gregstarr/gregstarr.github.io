@@ -6,11 +6,13 @@ published: true
 ---
 
 ## General
-
-* <https://rushter.com/blog/python-class-internals/>
 * <https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf>
 
-## Python Packages
+## Python info
+* <https://blog.scrapinghub.com/python-requests-proxy>
+* <https://rushter.com/blog/python-class-internals/>
+
+## Python Packages to look at later
 * <https://github.com/simpeg>
 * <https://github.com/cython/cython>
 * <https://github.com/cvxopt/cvxopt/> / <https://github.com/cvxgrp/cvxpy>
