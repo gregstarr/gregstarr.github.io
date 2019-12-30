@@ -9,8 +9,8 @@ published: true
 * <https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf>
 
 ## Python info
-* <https://blog.scrapinghub.com/python-requests-proxy>
-* <https://rushter.com/blog/python-class-internals/>
+* [Using Proxies and whatnot with requests](https://blog.scrapinghub.com/python-requests-proxy)
+* [Python class internal data structure](https://rushter.com/blog/python-class-internals/)
 
 ## Python Packages to look at later
 * <https://github.com/simpeg>
