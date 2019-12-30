@@ -7,6 +7,7 @@ published: true
 
 ## General
 * <https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf>
+* <https://www.lfd.uci.edu/~gohlke/pythonlibs/>
 
 ## Python info
 * [Using Proxies and whatnot with requests](https://blog.scrapinghub.com/python-requests-proxy)
@@ -19,3 +20,4 @@ published: true
 * <https://github.com/gvtulder/elasticdeform>
 * <https://github.com/vstinner/faulthandler>
 * <https://github.com/SheffieldML/GPy>
+* <https://github.com/WoLpH/numpy-stl>
