@@ -13,8 +13,8 @@ published: true
 * [Python class internal data structure](https://rushter.com/blog/python-class-internals/)
 
 ## Textbooks
-* <https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf>
-* <http://lib.ysu.am/open_books/312121.pdf>
+* [Boyd, Vandenberghe - Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
+* [Schneider, Eberly - Geometric Tools for Computer Graphics](http://lib.ysu.am/open_books/312121.pdf)
 
 ## Python Packages to look at later
 * <https://github.com/simpeg>
