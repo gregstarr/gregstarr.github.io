@@ -24,3 +24,4 @@ published: true
 * <https://github.com/vstinner/faulthandler>
 * <https://github.com/SheffieldML/GPy>
 * <https://github.com/WoLpH/numpy-stl>
+* <https://github.com/PyMesh/PyMesh>
