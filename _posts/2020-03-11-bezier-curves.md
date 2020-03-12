@@ -16,6 +16,9 @@ The quadratic bezier curve is defined by three control points `$P_1$`, `$P_2$` a
 \quad t \in [0, 1]
 $$`
 
+![](assets/bezier1.png)
+![](assets/bezier2.png)
+
 It can also be written in matrix form as:
 
 `$$
@@ -85,3 +88,6 @@ and
     2t \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
 \end{aligned}
 $$`
+
+![](assets/bezier3.png)
+![](assets/bezier4.png)
