@@ -10,7 +10,7 @@ published: true
 ---
 ## [Link to Poster](https://github.com/gregstarr/aoe2chart/blob/master/resources/chart.pdf)
 
-![poster preview](assets/poster-preview.png)
+![poster preview](/assets/poster-preview.png)
 
 ## Overview
 
