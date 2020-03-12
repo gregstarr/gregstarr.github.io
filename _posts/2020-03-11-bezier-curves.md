@@ -9,10 +9,10 @@ date: 3/11/2020
 
 See <https://pomax.github.io/bezierinfo/> for details.
 
-The quadratic bezier curve is defined by three control points `$P_1$`, `$\P_2$` and `$P_3$` and takes the form:
+The quadratic bezier curve is defined by three control points `$P_1$`, `$P_2$` and `$P_3$` and takes the form:
 
 `$$
-\quad \textbf{x}(t) = (1-t)^2 P_1 + 2 t (1-t) P_2 + t^2 \P_3
+\quad \textbf{x}(t) = (1-t)^2 P_1 + 2 t (1-t) P_2 + t^2 P_3
 \quad t \in [0, 1]
 $$`
 
@@ -32,5 +32,21 @@ Its derivative with respect to `$t$`:
 \begin{bmatrix} P_1 & P_2 & P_3 \end{bmatrix}
 \begin{bmatrix} 1 & -2 & 1 \\ 0 & 2 & -2 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 0 \\ 1 \\ 2 t \end{bmatrix}
+$$`
+
+### Arc Length
+
+I took a quick look around the internet and while there is a closed form solution for the arc length of a quadratic Bezier curve, it seems like most people prefer to evaluate the arc length integral numerically. Furthermore, for higher order Bezier curves, there is no general closed form solution and so the arc length must be evaluated numerically. 
+
+The arc length integral is:
+
+`$$
+L = \int_0^1 \lVert \textbf{x}'(t) \rVert dt
+$$`
+
+I evaluated this numerically by transforming it into a sum:
+
+``$
+L = \frac{1}{N} \sum_{n=0}^{N-1} \lVert \textbf{x}'(\frac{n}{N}) \rVert
 $$`
 
