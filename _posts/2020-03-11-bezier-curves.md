@@ -46,7 +46,17 @@ $$`
 
 I evaluated this numerically by transforming it into a sum:
 
-``$
+`$$
 L = \frac{1}{N} \sum_{n=0}^{N-1} \lVert \textbf{x}'(\frac{n}{N}) \rVert
 $$`
 
+Finally I wanted to take the derivative of the arc length with respect to the control points. 
+
+`$$
+\begin{aligned}
+    \nabla_{P_i} L 
+    &= \nabla_{P_i} \int_0^1 \lVert \textbf{x}'(t) \rVert dt \\
+    &= \int_0^1 \nabla_{P_i} \lVert \textbf{x}'(t) \rVert dt \\
+	&= \int_0^1 \frac{\textbf{x}'(t)}{\lVert \textbf{x}'(t) \rVert} \nabla_{P_i} \textbf{x}'(t) dt \\
+\end{aligned}
+$$`
