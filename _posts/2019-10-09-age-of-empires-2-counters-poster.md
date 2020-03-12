@@ -1,14 +1,16 @@
 ---
+layout: post
 title: Age of Empires 2 Counters Poster
 author: gstarr
 categories:
   - Age of Empires
-date: 2019-10-09T00:06:00.106Z
+date: 'Tue Oct 08 2019 20:06:00 GMT-0400 (Eastern Daylight Time)'
 thumbnail: /assets/post-picture.jpg
+published: true
 ---
 ## [Link to Poster](https://github.com/gregstarr/aoe2chart/blob/master/resources/chart.pdf)
 
-![poster preview](/uploads/poster-preview.png)
+![poster preview](assets/poster-preview.png)
 
 ## Overview
 
