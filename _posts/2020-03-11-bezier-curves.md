@@ -92,4 +92,4 @@ $$`
 ![](assets/bezier3.png)
 ![](assets/bezier4.png)
 
-I originally thought that the gradient vector at the endpoints would point straight out so I was a little suprised to find that they 
+I originally thought that the gradient vector at the endpoints would point straight out so I was a little suprised to find that they don't.
