@@ -16,8 +16,8 @@ The quadratic bezier curve is defined by three control points `$P_1$`, `$P_2$` a
 \quad t \in [0, 1]
 $$`
 
-![](assets/bezier1.png)
-![](assets/bezier2.png)
+![](/assets/bezier1.png)
+![](/assets/bezier2.png)
 
 It can also be written in matrix form as:
 
@@ -89,7 +89,7 @@ and
 \end{aligned}
 $$`
 
-![](assets/bezier3.png)
-![](assets/bezier4.png)
+![](/assets/bezier3.png)
+![](/assets/bezier4.png)
 
 I originally thought that the gradient vector at the endpoints would point straight out so I was a little suprised to find that they don't.
