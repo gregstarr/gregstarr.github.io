@@ -93,3 +93,7 @@ $$`
 ![](/assets/bezier4.png)
 
 I originally thought that the gradient vector at the endpoints would point straight out so I was a little suprised to find that they don't.
+
+### Closest Point on a Bezier Curve to Another Point
+
+### Gradient of Minimum Distance WRT the Control Points
