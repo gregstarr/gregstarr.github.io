@@ -160,3 +160,7 @@ The change in `$f$` due to a change in `$P_2$` has two components. The first com
 $$`
 
 Finally, the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) tells us how to find `$\nabla_P \phi$`.
+
+`$$
+\nabla_P \phi = - (\nabla_P g) (\nabla_t g)^{-1} = - (\nabla_P g) (\frac{\partial g}{\partial t})^{-1}
+$$`
