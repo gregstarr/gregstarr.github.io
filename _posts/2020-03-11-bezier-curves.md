@@ -159,4 +159,4 @@ The change in `$f$` due to a change in `$P_2$` has two components. The first com
 \nabla_P f(t(P), P) = \nabla_P f + \nabla_P \phi (\frac{\partial f}{\partial t})
 $$`
 
-Finally, the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) 
+Finally, the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) tells us how to find `$\nabla_P \phi$`.
