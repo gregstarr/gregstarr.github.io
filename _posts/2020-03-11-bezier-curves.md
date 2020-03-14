@@ -134,3 +134,10 @@ This is the cool part. The goal here is to think of `$ f(t) = \frac{1}{2} (\text
 \quad f(t, P) = \frac{1}{2} (\textbf{x, P}(t) - Q) \cdot (\textbf{x, P}(t) - Q),
 \quad P = (P_1, P_2, P_3)
 $$`
+
+Then I want to take the gradient:
+
+`$$
+\nabla_P \min_t f(t, P)
+$$`
+
