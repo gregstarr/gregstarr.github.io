@@ -94,6 +94,36 @@ $$`
 
 I originally thought that the gradient vector at the endpoints would point straight out so I was a little suprised to find that they don't.
 
-### Closest Point on a Bezier Curve to Another Point
+### Closest Point on Bezier Curve to Another Point `$Q$`
+
+To find the closest point on the curve to another point `$Q$`, I started with the expression:
+
+`$$
+\begin{aligned}
+    \arg \min_t \lVert \textbf{x}(t) - Q \rVert 
+    &= \arg \min_t \frac{1}{2} \lVert \textbf{x}(t) - Q \rVert^2 \\
+    &= \arg \min_t \frac{1}{2} (\textbf{x}(t) - Q) \cdot (\textbf{x}(t) - Q)
+\end{aligned}
+$$`
+
+I decided to estimate this using Newton's method, which has the following iteration:
+
+`$$
+t^{k+1} = t^k - \alpha f''(t^k)^{-1} f'(t^k)
+$$`
+
+where `$\alpha$` is the step size, often set to 1.
+
+Taking two derivatives of the cost function:
+
+`$$
+\begin{aligned}
+    & f(t) = \frac{1}{2} (\textbf{x}(t) - Q) \cdot (\textbf{x}(t) - Q) \\
+    & f'(t) = (\textbf{x}(t) - Q) \cdot \textbf{x}'(t) \\
+    & f''(t) = \textbf{x}'(t) \cdot \textbf{x}'(t) + (\textbf{x}(t) - Q) \cdot \textbf{x}''(t) \\
+\end{aligned}
+$$`
+
+This is basically everything we need to solve the problem. The final detail has to do with the fact that we are optimizing over a finite set `$t \in [0, 1]$`. This is very easy to deal with because the problem is 1-dimensional. All I do is check after each iteration if `$t$` is above 1 or below 0, and if it is, I just return 1 or 0 respectively. This is basically a 'gradient projection method' because projecting `$t$` onto `$[0, 1]$` is just a clamping operation. Finally, because the cost function is a 4th order polynomial, there are potentially several local minima. To deal with this, I perform the minimization starting once at `$t = 0$` and once at `$t = 1$`. If the results are the same then that is the answer I keep, if they are different, I calculate the cost at each of the two points as well as at the two boundary points and keep the lowest of the 4. 
 
 ### Gradient of Minimum Distance WRT the Control Points
