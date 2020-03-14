@@ -191,13 +191,18 @@ So far what we have is A, B and C which gives us the change in the projection of
 \end{aligned}
 $$`
 
-Another way to think about it is that although `$t$` and `$P$` are independent variables for `$f$`, there is a specific combination of `$t$` and `$P$` which minimize `$f$`. This means that when only considering the minimum of `$f$`, you can think of `$t$` as a function of `$P$` and `$f$` as `$f(\phi(P), P)$` where `$t = \phi(P)$`. To take the derivative of a function of this form, you need to use the chain rule to take the __total derivative__. Using the chain rule:
+This looks a lot like the __total derivative__ of `$\min_t f(t, P)$`. Using all this, I can now minimize the function:
 
 `$$
-\nabla_P f(t(P), P) = \nabla_P f + (\nabla_P \phi) (\frac{\partial f}{\partial t})
+J(P_2) = -\log(F_Q) + \lambda L
 $$`
 
-At last, a dump of all the derivatives needed to put it all together:
+Where `$F_Q$` is the minimum distance from the curve `$\textbf{x}$` to the point `$Q$`, `$L$` is the arc length of `$\textbf{x}$`, and `$\lambda$` is a weighting coefficient. 
+
+![](/assets/bezier_optimization_1.png)
+![](/assets/bezier_optimization_2.png)
+
+Dump of all the derivatives:
 
 `$$
 \begin{aligned}
@@ -215,14 +220,3 @@ At last, a dump of all the derivatives needed to put it all together:
     &\frac{\partial g}{\partial t} = \frac{\partial^2 f}{\partial t^2} = (\frac{\partial \textbf{x}}{\partial t}) \cdot (\frac{\partial \textbf{x}}{\partial t}) + (\textbf{x} - Q) \cdot (\frac{\partial^2 \textbf{x}}{\partial t^2})
 \end{aligned}
 $$`
-
-Using all this, I can now minimize the function:
-
-`$$
-J(P_2) = -\log(F_Q) + \lambda L
-$$`
-
-Where `$F_Q$` is the minimum distance from the curve `$\textbf{x}$` to the point `$Q$`, `$L$` is the arc length of `$\textbf{x}$`, and `$\lambda$` is a weighting coefficient. 
-
-![](/assets/bezier_optimization_1.png)
-![](/assets/bezier_optimization_2.png)
