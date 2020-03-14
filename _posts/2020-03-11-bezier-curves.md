@@ -74,20 +74,20 @@ and
 
 `$$
 \begin{aligned}
-    & \nabla_{P_1} \textbf{x}(t) = 
-    \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+    & \nabla_{P_1} \textbf{x}'(t) = 
+    \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
     \begin{bmatrix} 1 & -2 & 1 \end{bmatrix}
     \begin{bmatrix} 0 \\ 1 \\ 2t \end{bmatrix}
     = 
     (-2 + 2t) \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
-    & \nabla_{P_2} \textbf{x}(t) = 
-    \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+    & \nabla_{P_2} \textbf{x}'(t) = 
+    \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
     \begin{bmatrix} 0 & 2 & -2 \end{bmatrix}
     \begin{bmatrix} 0 \\ 1 \\ 2t \end{bmatrix}
     = 
     (2 - 4t) \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
-    & \nabla_{P_3} \textbf{x}(t) = 
-    \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+    & \nabla_{P_3} \textbf{x}'(t) = 
+    \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
     \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}
     \begin{bmatrix} 0 \\ 1 \\ 2t \end{bmatrix}
     = 
@@ -133,7 +133,6 @@ $$`
 This is basically everything we need to solve the problem. The final detail has to do with the fact that we are optimizing over a finite set `$t \in [0, 1]$`. This is very easy to deal with because the problem is 1-dimensional. All I do is check after each iteration if `$t$` is above 1 or below 0, and if it is, I just return 1 or 0 respectively. This is basically a 'gradient projection method' because projecting `$t$` onto `$[0, 1]$` is just a clamping operation. Finally, because the cost function is a 4th order polynomial, there are potentially several local minima. To deal with this, I perform the minimization starting once at `$t = 0$` and once at `$t = 1$`. If the results are the same then that is the answer I keep, if they are different, I calculate the cost at each of the two points as well as at the two boundary points and keep the lowest of the 4. 
 
 ### Gradient of Minimum Distance WRT the Control Points
-* give the formulas for A and B, show the whole construction
 
 This is the cool part. The goal here is to think of `$ f(t) = \frac{1}{2} (\textbf{x}(t) - Q) \cdot (\textbf{x}(t) - Q) $` as a function of the control points as well.
 
@@ -160,7 +159,15 @@ The blue curve is `$\textbf{x}(t)$` and the green curve is `$\textbf{x}'(t)$` wh
 
 ![](/assets/bezier_derivation_3.png)
 
-The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. Another way to think about it is that although `$t$` and `$P$` are independent variables for `$f$`, there is a specific combination of `$t$` and `$P$` which minimize `$f$`. This means that when only considering the minimum of `$f$`, you can think of `$t$` as a function of `$P$` and `$f$` as `$f(\phi(P), P)$` where `$t = \phi(P)$`. To take the derivative of a function of this form, you need to use the chain rule to take the __total derivative__. Using the chain rule:
+The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. This is decribed by the gradient (Jacobian) of `$\textbf{x}$` with respect to `$P$`. 
+
+`$$
+\nabla_P \textbf{x} = 
+$$`
+
+The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
+
+Another way to think about it is that although `$t$` and `$P$` are independent variables for `$f$`, there is a specific combination of `$t$` and `$P$` which minimize `$f$`. This means that when only considering the minimum of `$f$`, you can think of `$t$` as a function of `$P$` and `$f$` as `$f(\phi(P), P)$` where `$t = \phi(P)$`. To take the derivative of a function of this form, you need to use the chain rule to take the __total derivative__. Using the chain rule:
 
 `$$
 \nabla_P f(t(P), P) = \nabla_P f + (\nabla_P \phi) (\frac{\partial f}{\partial t})
