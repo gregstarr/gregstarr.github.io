@@ -6,8 +6,21 @@ image: assets/bezier.png
 date: 3/11/2020
 ---
 ### Motivation
-* routing application
-* options for defining the paths
+The motivation of this started because I am working on autorouting for 3D printed electrical circuits. This is where you have the locations and orientations of a set of electrical components and you want to determine routes for the wires to connect everything together. More generally, you are given a set of points and a set of connections between those points and you want to figure out the paths which should connect the points while being subject to various constraints. This is a complicated problem and there are many ways to go about it. In general, the paths I select I want to be optimal with respect to some objective function that I will define. My objective function will resemble the following:
+
+`$$
+\text{Cost} = -\sum_{i, j \in W}\log F(i, j) + \lambda \sum_{i \in W} L(i)
+$$`
+
+where `$W$` is the set of paths, 
+
+
+But before we get to that, how do we even define the paths?
+
+The first way of defining the paths I am considering is to create a set of nodes corresponding to points fairly evenly distributed in 3D space. Then the path could be an ordered list of these nodes. The actual function defining the path would be a piecewise linear function with line segments connecting the various nodes in the list. This is a promising way to do this because I think there are already fairly well established methods for optimizing over this kind of data structure. Search for "network optimization", "maximum flow" or "minimum cost flow". 
+
+Another option, and the one I will focus on here, is to use some sort of parametric curve, like a Bezier curve.
+
 * optimization
 * bezier curves
 
