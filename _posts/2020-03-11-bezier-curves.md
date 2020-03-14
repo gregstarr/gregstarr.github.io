@@ -165,6 +165,8 @@ The change in `$f$` due to a change in `$P_2$` has two components. The first com
 \nabla_{P_i} \textbf{x} = M_i \cdot T \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
 $$`
 
+The way I think of this is that if I move `$P_i$` by a vector `$\textbf{u}$`, then the point `$\textbf{x}(t)$` will approximately move by `$(\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`, so `$\textbf{x}'(t) = \textbf{x}(t) +  (\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`.
+
 The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
 
 Another way to think about it is that although `$t$` and `$P$` are independent variables for `$f$`, there is a specific combination of `$t$` and `$P$` which minimize `$f$`. This means that when only considering the minimum of `$f$`, you can think of `$t$` as a function of `$P$` and `$f$` as `$f(\phi(P), P)$` where `$t = \phi(P)$`. To take the derivative of a function of this form, you need to use the chain rule to take the __total derivative__. Using the chain rule:
