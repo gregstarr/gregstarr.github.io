@@ -31,7 +31,7 @@ It can also be written in matrix form as:
 \textbf{x}(t) = 
 \begin{bmatrix} P_1 & P_2 & P_3 \end{bmatrix}
 \begin{bmatrix} 1 & -2 & 1 \\ 0 & 2 & -2 \\ 0 & 0 & 1 \end{bmatrix}
-\begin{bmatrix} 1 \\ t \\ t^2 \end{bmatrix}
+\begin{bmatrix} 1 \\ t \\ t^2 \end{bmatrix} = P M T
 $$`
 
 Its derivative with respect to `$t$`:
@@ -40,7 +40,7 @@ Its derivative with respect to `$t$`:
 \textbf{x}(t) = 
 \begin{bmatrix} P_1 & P_2 & P_3 \end{bmatrix}
 \begin{bmatrix} 1 & -2 & 1 \\ 0 & 2 & -2 \\ 0 & 0 & 1 \end{bmatrix}
-\begin{bmatrix} 0 \\ 1 \\ 2 t \end{bmatrix}
+\begin{bmatrix} 0 \\ 1 \\ 2 t \end{bmatrix} = P M T'
 $$`
 
 ### Arc Length
@@ -162,7 +162,7 @@ The blue curve is `$\textbf{x}(t)$` and the green curve is `$\textbf{x}'(t)$` wh
 The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. This is decribed by the gradient (Jacobian) of `$\textbf{x}$` with respect to `$P$`. 
 
 `$$
-\nabla_P \textbf{x} = 
+\nabla_{P_i} \textbf{x} = 
 $$`
 
 The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
