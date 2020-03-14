@@ -141,3 +141,16 @@ Then I want to take the gradient:
 \nabla_P \min_t f(t, P)
 $$`
 
+I'm pretty sure the following is correct, but email me if I made a mistake. The overall picture looks like this:
+
+![](/assets/bezier_derivation_1.png)
+
+The blue curve is `$\textbf{x}(t)$` and the green curve is `$\textbf{x}'(t)$` where I displaced `$P_2$` by a tiny bit. The black dot is the point `$Q$`. 
+
+![](/assets/bezier_derivation_2.png)
+
+`$\textbf{x}(t^*)$` is the closest point on `$\textbf{x}$` to `$Q$`. After I move `$P_2$`, `$t^*$` may not be the closest point to `$Q$` on `$\textbf{x}'$`. The actual closest point to `$Q$` on `$\textbf{x}'$` is `$\textbf{x}'(t^*')$`. 
+
+![](/assets/bezier_derivation_3.png)
+
+The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^*' - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
