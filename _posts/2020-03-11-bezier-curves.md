@@ -100,7 +100,7 @@ $$`
 
 I originally thought that the gradient vector at the endpoints would point straight out so I was a little suprised to find that they don't.
 
-### Closest Point on Bezier Curve to Another Point `$Q$`
+### Projection of Point `$Q$` onto a Bezier Curve
 
 To find the closest point on the curve to another point `$Q$`, I started with the expression:
 
@@ -159,26 +159,42 @@ The blue curve is `$\textbf{x}(t)$` and the green curve is `$\textbf{x}'(t)$` wh
 
 ![](/assets/bezier_derivation_3.png)
 
-The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. This is decribed by the gradient (Jacobian) of `$\textbf{x}$` with respect to `$P$`. 
+The change in `$f$` due to a change in `$P_2$` has two components, `$A + B = C$`. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. This is decribed by the gradient (Jacobian) of `$\textbf{x}$` with respect to `$P$`. 
 
 `$$
-\nabla_{P_i} \textbf{x} = M_i \cdot T \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
+A = \nabla_{P_i} \textbf{x} = M_i \cdot T \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
 $$`
 
 The way I think of this is that if I move `$P_i$` by a vector `$\textbf{u}$`, then the point `$\textbf{x}(t)$` will move by (approximately) `$(\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`, so `$\textbf{x}'(t) = \textbf{x}(t) +  (\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`.
 
-The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
+The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. This is where things get a little complicated. On `$\textbf{x}$`, the closest point to `$Q$` will satisfy the condition `$f'(t, P) = 0$`. This equation defines a surface such that if we plug in a value for `$P$`, there is only one possible value for `$t$`. This description basically defines a function who's input is `$P$` and who's output is `$t$`. This is known as an __implicitly defined function__ because we haven't explicitly written a function of the variables `$P$`, we've just defined a relationship between `$P$` and `$t$` using an equation. Even though we may not be able to write the function down, let's pretend we can and call it `$\phi(P)$`. Remember, we want to know, for a small change in `$P$`, what is the change in `$t$` that will get us to the minimizer of `$f$`. This is just the gradient of `$\phi(P)$` (with respect to `$P$`). The [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) tells us how to find `$\nabla_P \phi$`.
+
+`$$
+\nabla_P \phi = - (\nabla_P g) (\nabla_t g)^{-1} = - (\nabla_P g) (\frac{\partial g}{\partial t})^{-1}
+$$`
+
+where `$g = \frac{\partial f}{\partial t}$`.
+
+In order to turn this into a change in `$\textbf{x}$`, we just need to multiply this by the derivative of `$\textbf{x}$` with respect to `$t$`. This is basically just an application of the chain rule. Overall:
+
+`$$
+B = (\nabla_P \phi) \cdot (\frac{\partial \textbf{x}}{\partial t})
+$$`
+
+So far what we have is A, B and C which gives us the change in the projection of `$Q$` onto `$\textbf{x}$` due to a change in `$P$`. Using the chain rule agian, we can get the gradient of the minimum distance with repect to `$P$` by multiplying `$C$` by the gradient of `$f$` with respect to `$\textbf{x}$`. 
+
+`$$
+\begin{aligned}
+    \nabla_{P_i} \min_t f(t, P) 
+    &= ((\nabla_{P_i} \phi) \cdot (\frac{\partial \textbf{x}}{\partial t}) + \nabla_{P_i} \textbf{x}) \cdot \nabla_{\textbf{x}} f \\
+    &= (\nabla_{P_i} \phi) \cdot (\frac{\partial f}{\partial t}) + \nabla_{P_i} f \\
+\end{aligned}
+$$`
 
 Another way to think about it is that although `$t$` and `$P$` are independent variables for `$f$`, there is a specific combination of `$t$` and `$P$` which minimize `$f$`. This means that when only considering the minimum of `$f$`, you can think of `$t$` as a function of `$P$` and `$f$` as `$f(\phi(P), P)$` where `$t = \phi(P)$`. To take the derivative of a function of this form, you need to use the chain rule to take the __total derivative__. Using the chain rule:
 
 `$$
 \nabla_P f(t(P), P) = \nabla_P f + (\nabla_P \phi) (\frac{\partial f}{\partial t})
-$$`
-
-Finally, the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) tells us how to find `$\nabla_P \phi$`.
-
-`$$
-\nabla_P \phi = - (\nabla_P g) (\nabla_t g)^{-1} = - (\nabla_P g) (\frac{\partial g}{\partial t})^{-1}
 $$`
 
 At last, a dump of all the derivatives needed to put it all together:
