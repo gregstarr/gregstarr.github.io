@@ -165,7 +165,7 @@ The change in `$f$` due to a change in `$P_2$` has two components. The first com
 \nabla_{P_i} \textbf{x} = M_i \cdot T \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
 $$`
 
-The way I think of this is that if I move `$P_i$` by a vector `$\textbf{u}$`, then the point `$\textbf{x}(t)$` will approximately move by `$(\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`, so `$\textbf{x}'(t) = \textbf{x}(t) +  (\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`.
+The way I think of this is that if I move `$P_i$` by a vector `$\textbf{u}$`, then the point `$\textbf{x}(t)$` will move by (approximately) `$(\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`, so `$\textbf{x}'(t) = \textbf{x}(t) +  (\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`.
 
 The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
 
