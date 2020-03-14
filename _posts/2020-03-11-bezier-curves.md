@@ -153,4 +153,10 @@ The blue curve is `$\textbf{x}(t)$` and the green curve is `$\textbf{x}'(t)$` wh
 
 ![](/assets/bezier_derivation_3.png)
 
-The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^*' - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
+The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^*' - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. Another way to think about it is that although `$t$` and `$P$` are independent variables for `$f$`, there is a specific combination of `$t$` and `$P$` which minimize `$f$`. This means that when only considering the minimum of `$f$`, you can think of `$t$` as a function of `$P$` and `$f$` as `$f(\phi(P), P)$` where `$t = \phi(P)$`. To take the derivative of a function of this form, you need to use the chain rule to take the __total derivative__. Using the chain rule:
+
+`$$
+\nabla_P f(t(P), P) = \nabla_P f + \nabla_P \phi (\frac{\partial f}{\partial t})
+$$`
+
+Finally, the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) 
