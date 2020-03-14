@@ -162,7 +162,7 @@ The blue curve is `$\textbf{x}(t)$` and the green curve is `$\textbf{x}'(t)$` wh
 The change in `$f$` due to a change in `$P_2$` has two components. The first component, labeled 'A' in the picture, is due to the fact that EVERY point on `$\textbf{x}$` changes when one of the control points changes. This is decribed by the gradient (Jacobian) of `$\textbf{x}$` with respect to `$P$`. 
 
 `$$
-\nabla_{P_i} \textbf{x} = 
+\nabla_{P_i} \textbf{x} = M_i \cdot T \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
 $$`
 
 The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. 
