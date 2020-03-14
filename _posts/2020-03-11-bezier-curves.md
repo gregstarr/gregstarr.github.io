@@ -75,23 +75,23 @@ and
 `$$
 \begin{aligned}
     & \nabla_{P_1} \textbf{x}'(t) = 
-    \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
     \begin{bmatrix} 1 & -2 & 1 \end{bmatrix}
     \begin{bmatrix} 0 \\ 1 \\ 2t \end{bmatrix}
-    = 
-    (-2 + 2t) \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
-    & \nabla_{P_2} \textbf{x}'(t) = 
     \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
+    = 
+    (-2 + 2t) \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix} \\
+    & \nabla_{P_2} \textbf{x}'(t) = 
     \begin{bmatrix} 0 & 2 & -2 \end{bmatrix}
     \begin{bmatrix} 0 \\ 1 \\ 2t \end{bmatrix}
-    = 
-    (2 - 4t) \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
-    & \nabla_{P_3} \textbf{x}'(t) = 
     \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
+    = 
+    (2 - 4t) \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix} \\
+    & \nabla_{P_3} \textbf{x}'(t) = 
     \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}
     \begin{bmatrix} 0 \\ 1 \\ 2t \end{bmatrix}
+    \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix}
     = 
-    2t \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
+    2t \begin{bmatrix} 1 & 0 \\0 & 1 \end{bmatrix} \\
 \end{aligned}
 $$`
 
