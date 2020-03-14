@@ -149,7 +149,7 @@ The blue curve is `$\textbf{x}(t)$` and the green curve is `$\textbf{x}'(t)$` wh
 
 ![](/assets/bezier_derivation_2.png)
 
-`$\textbf{x}(t^*)$` is the closest point on `$\textbf{x}$` to `$Q$`. After I move `$P_2$`, `$t^*$` may not be the closest point to `$Q$` on `$\textbf{x}'$`. The actual closest point to `$Q$` on `$\textbf{x}'$` is `$\textbf{x}'(t^{*'})$`. 
+`$\textbf{x}(t^*)$` is the closest point on `$\textbf{x}$` to `$Q$`. After I move `$P_2$`, `$t^*$` may not be the closest point to `$Q$` on `$\textbf{x}'$`. The actual closest point to `$Q$` on `$\textbf{x}'$` is `$\textbf{x}'(t^{*'})$`. Zooming in again:
 
 ![](/assets/bezier_derivation_3.png)
 
