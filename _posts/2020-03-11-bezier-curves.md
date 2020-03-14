@@ -20,8 +20,6 @@ Another option, and the one I will focus on here, is to use some sort of paramet
 
 ### Quadratic Bezier Curves
 
-See <https://pomax.github.io/bezierinfo/> for details.
-
 The quadratic bezier curve is a parametric curve defined by three control points `$P_1$`, `$P_2$` and `$P_3$`. It takes the form:
 
 `$$
@@ -49,6 +47,10 @@ Its derivative with respect to `$t$`:
 \begin{bmatrix} 1 & -2 & 1 \\ 0 & 2 & -2 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 0 \\ 1 \\ 2 t \end{bmatrix} = P M T'
 $$`
+
+I won't go into too much detail about the curves themselves because there are already great resources for that. Try: <https://pomax.github.io/bezierinfo/>
+
+Ultimately, Bezier curves might be a good way to define the routes because they are defined by variables. If I can take gradients of my cost function with respect to these variables, then I can directly optimize the routes using gradient based methods. In the following sections, I will work towards taking the gradient of my cost function with respect to the control points.
 
 ### Arc Length
 
