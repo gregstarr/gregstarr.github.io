@@ -127,3 +127,10 @@ $$`
 This is basically everything we need to solve the problem. The final detail has to do with the fact that we are optimizing over a finite set `$t \in [0, 1]$`. This is very easy to deal with because the problem is 1-dimensional. All I do is check after each iteration if `$t$` is above 1 or below 0, and if it is, I just return 1 or 0 respectively. This is basically a 'gradient projection method' because projecting `$t$` onto `$[0, 1]$` is just a clamping operation. Finally, because the cost function is a 4th order polynomial, there are potentially several local minima. To deal with this, I perform the minimization starting once at `$t = 0$` and once at `$t = 1$`. If the results are the same then that is the answer I keep, if they are different, I calculate the cost at each of the two points as well as at the two boundary points and keep the lowest of the 4. 
 
 ### Gradient of Minimum Distance WRT the Control Points
+
+This is the cool part. The goal here is to think of `$ f(t) = \frac{1}{2} (\textbf{x}(t) - Q) \cdot (\textbf{x}(t) - Q) $` as a function of the control points as well.
+
+`$$
+\quad f(t, P) = \frac{1}{2} (\textbf{x, P}(t) - Q) \cdot (\textbf{x, P}(t) - Q),
+\quad P = (P_1, P_2, P_3)
+$$`
