@@ -164,3 +164,33 @@ Finally, the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_
 `$$
 \nabla_P \phi = - (\nabla_P g) (\nabla_t g)^{-1} = - (\nabla_P g) (\frac{\partial g}{\partial t})^{-1}
 $$`
+
+At last, a dump of all the derivatives needed to put it all together:
+
+`$$
+\begin{aligned}
+    &P = \begin{bmatrix} P_1 & P_2 & P_3 \end{bmatrix} \\
+    &M = \begin{bmatrix} 1 & -2 & 1 \\ 0 & 2 & -2 \\ 0 & 0 & 1 \end{bmatrix} \\
+    &T = \begin{bmatrix} 1 & t & t^2 \end{bmatrix} \\
+    &T' = \begin{bmatrix} 0 & 1 & 2t \end{bmatrix} \\
+    &T'' = \begin{bmatrix} 0 & 0 & 2 \end{bmatrix} \\
+    &\textbf{x} = PMT  \\
+    &\frac{\partial \textbf{x}}{\partial t} =  PMT' \\
+    &f = \frac{1}{2} (\textbf{x} - Q) \cdot (\textbf{x} - Q) \\
+    &g = \frac{\partial f}{\partial t} = (\textbf{x} - Q) \cdot (\frac{\partial \textbf{x}}{\partial t}) \\
+    &\nabla_P f = (\textbf{x} - Q) \cdot \nabla_P \textbf{x} \\
+    &\nabla_P g = \nabla_P (\frac{\partial f}{\partial t}) = (\nabla_P \textbf{x}) \cdot (\frac{\partial \textbf{x}}{\partial t}) + (\textbf{x} - Q) \cdot \nabla_P (\frac{\partial \textbf{x}}{\partial t}) \\
+    &\frac{\partial g}{\partial t} = \frac{\partial^2 f}{\partial t^2} = (\frac{\partial \textbf{x}}{\partial t}) \cdot (\frac{\partial \textbf{x}}{\partial t}) + (\textbf{x} - Q) \cdot (\frac{\partial^2 \textbf{x}}{\partial t^2})
+\end{aligned}
+$$`
+
+Using all this, I can now minimize the function:
+
+`$$
+J(P_2) = -\log(F_Q) + \lambda L
+$$`
+
+Where `$F_Q$` is the minimum distance from the curve `$\textbf{x}$` to the point `$Q$`, `$L$` is the arc length of `$\textbf{x}$`, and `$\lambda$` is a weighting coefficient. 
+
+![](/assets/bezier_optimization_1.png)
+![](/assets/bezier_optimization_2.png)
