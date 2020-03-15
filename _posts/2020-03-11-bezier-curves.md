@@ -153,7 +153,7 @@ $$`
 Then I want to take the gradient:
 
 `$$
-\nabla_P \min_t f(t, P)
+\nabla_{P_i} \min_t f(t, P)
 $$`
 
 I'm pretty sure the following is correct, but email me if I made a mistake. The overall picture looks like this:
@@ -176,10 +176,10 @@ $$`
 
 The way I think of this is that if I move `$P_i$` by a vector `$\textbf{u}$`, then the point `$\textbf{x}(t)$` will move by (approximately) `$(\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`, so `$\textbf{x}'(t) = \textbf{x}(t) +  (\nabla_{P_i} \textbf{x}) \cdot \textbf{u}$`.
 
-The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. This is where things get a little complicated. On `$\textbf{x}$`, the closest point to `$Q$` will satisfy the condition `$f'(t, P) = 0$`. This equation defines a surface such that if we plug in a value for `$P$`, there is only one possible value for `$t$`. This description basically defines a function who's input is `$P$` and who's output is `$t$`. This is known as an __implicitly defined function__ because we haven't explicitly written a function of the variables `$P$`, we've just defined a relationship between `$P$` and `$t$` using an equation. Even though we may not be able to write the function down, let's pretend we can and call it `$\phi(P)$`. Remember, we want to know, for a small change in `$P$`, what is the change in `$t$` that will get us to the minimizer of `$f$`. This is just the gradient of `$\phi(P)$` (with respect to `$P$`). The [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) tells us how to find `$\nabla_P \phi$`.
+The second component, labeled 'B', comes from the change in `$t$`, `$\Delta t = t^{*'} - t^*$`, required to get to the point on `$\textbf{x}'$` which is closest to `$Q$`. This is where things get a little complicated. On `$\textbf{x}$`, the closest point to `$Q$` will satisfy the condition `$f'(t, P) = 0$`. This equation defines a surface such that if we plug in a value for `$P$`, there is only one possible value for `$t$`. This description basically defines a function who's input is `$P$` and who's output is `$t$`. This is known as an __implicitly defined function__ because we haven't explicitly written a function of the variables `$P$`, we've just defined a relationship between `$P$` and `$t$` using an equation. Even though we may not be able to write the function down, let's pretend we can and call it `$\phi(P)$`. Remember, we want to know, for a small change in `$P$`, what is the change in `$t$` that will get us to the minimizer of `$f$`. This is just the gradient of `$\phi(P)$` (with respect to `$P$`). The [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem) tells us how to find `$\nabla_{P_i} \phi$`.
 
 `$$
-\nabla_P \phi = - (\nabla_P g) (\nabla_t g)^{-1} = - (\nabla_P g) (\frac{\partial g}{\partial t})^{-1}
+\nabla_{P_i} \phi = - (\nabla_{P_i} g) (\nabla_t g)^{-1} = - (\nabla_{P_i} g) (\frac{\partial g}{\partial t})^{-1}
 $$`
 
 where `$g = \frac{\partial f}{\partial t}$`.
@@ -187,7 +187,7 @@ where `$g = \frac{\partial f}{\partial t}$`.
 In order to turn this into a change in `$\textbf{x}$`, we just need to multiply this by the derivative of `$\textbf{x}$` with respect to `$t$`. This is basically just an application of the chain rule. Overall:
 
 `$$
-B = (\nabla_P \phi) \cdot (\frac{\partial \textbf{x}}{\partial t})
+B = (\nabla_{P_i} \phi) \cdot (\frac{\partial \textbf{x}}{\partial t})
 $$`
 
 So far what we have is A, B and C which gives us the change in the projection of `$Q$` onto `$\textbf{x}$` due to a change in `$P$`. Using the chain rule agian, we can get the gradient of the minimum distance with repect to `$P$` by multiplying `$C$` by the gradient of `$f$` with respect to `$\textbf{x}$`. 
@@ -224,8 +224,8 @@ Dump of all the derivatives:
     &\frac{\partial \textbf{x}}{\partial t} =  PMT' \\
     &f = \frac{1}{2} (\textbf{x} - Q) \cdot (\textbf{x} - Q) \\
     &g = \frac{\partial f}{\partial t} = (\textbf{x} - Q) \cdot (\frac{\partial \textbf{x}}{\partial t}) \\
-    &\nabla_P f = (\textbf{x} - Q) \cdot \nabla_P \textbf{x} \\
-    &\nabla_P g = \nabla_P (\frac{\partial f}{\partial t}) = (\nabla_P \textbf{x}) \cdot (\frac{\partial \textbf{x}}{\partial t}) + (\textbf{x} - Q) \cdot \nabla_P (\frac{\partial \textbf{x}}{\partial t}) \\
+    &\nabla_{P_i} f = (\textbf{x} - Q) \cdot \nabla_{P_i} \textbf{x} \\
+    &\nabla_{P_i} g = \nabla_{P_i} (\frac{\partial f}{\partial t}) = (\nabla_{P_i} \textbf{x}) \cdot (\frac{\partial \textbf{x}}{\partial t}) + (\textbf{x} - Q) \cdot \nabla_{P_i} (\frac{\partial \textbf{x}}{\partial t}) \\
     &\frac{\partial g}{\partial t} = \frac{\partial^2 f}{\partial t^2} = (\frac{\partial \textbf{x}}{\partial t}) \cdot (\frac{\partial \textbf{x}}{\partial t}) + (\textbf{x} - Q) \cdot (\frac{\partial^2 \textbf{x}}{\partial t^2})
 \end{aligned}
 $$`
