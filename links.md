@@ -16,6 +16,7 @@ published: true
 * [Boyd, Vandenberghe - Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
 * [Schneider, Eberly - Geometric Tools for Computer Graphics](http://lib.ysu.am/open_books/312121.pdf)
 * [Patrikalakis, Maekawa, Cho - Shape Interrogation for Computer Aided Design and Manufacturing](http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/mathe.html)
+* [Network Flows](http://cs.yazd.ac.ir/hasheminezhad/STSCS4R1.pdf)
 
 ## Python Packages to look at later
 * <https://github.com/simpeg>
