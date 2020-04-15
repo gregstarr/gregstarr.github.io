@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Bezier Curves
 image: assets/bezier.png
-date: 3/11/2020
+date: 2020-3-11
 ---
 ### Motivation
 The motivation of this started because I am working on autorouting for 3D printed electrical circuits. This is where you have the locations and orientations of a set of electrical components and you want to determine routes for the wires to connect everything together. More generally, you are given a set of points and a set of connections between those points and you want to figure out the paths which should connect the points while being subject to various constraints. This is a complicated problem and there are many ways to go about it. In general, the paths I select I want to be optimal with respect to some objective function that I will define. My objective function will resemble the following:
