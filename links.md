@@ -17,6 +17,7 @@ published: true
 * [Schneider, Eberly - Geometric Tools for Computer Graphics](http://lib.ysu.am/open_books/312121.pdf)
 * [Patrikalakis, Maekawa, Cho - Shape Interrogation for Computer Aided Design and Manufacturing](http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/mathe.html)
 * [Network Flows](http://cs.yazd.ac.ir/hasheminezhad/STSCS4R1.pdf)
+* [Bertsekas - Network Optimization](http://web.mit.edu/dimitrib/www/netbook_Full_Book_NEW.pdf)
 
 ## Python Packages to look at later
 * <https://github.com/simpeg>
