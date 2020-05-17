@@ -19,6 +19,7 @@ published: true
 * [Network Flows](http://cs.yazd.ac.ir/hasheminezhad/STSCS4R1.pdf)
 * [Bertsekas - Network Optimization](http://web.mit.edu/dimitrib/www/netbook_Full_Book_NEW.pdf)
 * [Nemirovski and Ben-Tal - Modern Optimization Lecture Notes](https://www2.isye.gatech.edu/~nemirovs/Lect_ModConvOpt.pdf)
+* [Fitzpatrick - Plasma Physics](http://farside.ph.utexas.edu/teaching/plasma/Plasmahtml/Plasmahtml.html)
 
 ## Python Packages to look at later
 * <https://github.com/simpeg>
