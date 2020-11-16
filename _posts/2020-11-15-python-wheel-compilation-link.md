@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: python wheel compilation link
 date: '2020-11-15'
 subtitle: useful link
