@@ -4,6 +4,7 @@ published: true
 title: Space Physics Data
 date: 4/24/2021
 subtitle: Where to find and how to download
+image: assets/preprocessing.png
 ---
 ## Downloading Space Physics Data
 
