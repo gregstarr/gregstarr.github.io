@@ -41,3 +41,9 @@ image: assets/tec_thumb.png
 * https://supermag.jhuapl.edu/
 * can download long dataset of indices
 * downloading long dataset of magnetic field measurements is difficult
+
+### OMNI Solar Wind Parameters
+* includes solar wind parameters: B field, speed, temperature etc.
+* includes geomagnetic indices: Kp, ap, Dst, etc
+* Low resolution (1 hour averages) https://spdf.gsfc.nasa.gov/pub/data/omni/low_res_omni/
+* high resolution (1 min) https://omniweb.gsfc.nasa.gov/ow_min.html
