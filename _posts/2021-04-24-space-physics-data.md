@@ -15,8 +15,29 @@ image: assets/tec_thumb.png
 
 ### DMSP Ion Drift Meter
 * ion drift measured along polar orbits
-* Use e.g. `python -m madrigalWeb.globalDownload --verbose --url=http://cedar.openmadrigal.org --outputDir="E:/dmsp" --user_fullname="Gregory Starr" --user_email=gstarr@bu.edu --user_affiliation="Boston University" --format="hdf5" --startDate="01/01/2010" --endDate="12/31/2021" --inst=8100 --kindat=10108,10109,10110,10111,10112,10113,10114,10115,10116,10117,10118,10119 `
+* Use e.g. `python -m madrigalWeb.globalDownload --verbose --url=http://cedar.openmadrigal.org --outputDir="E:/dmsp" --user_fullname="Gregory Starr" --user_email=gstarr@bu.edu --user_affiliation="Boston University" --format="hdf5" --startDate="01/01/2010" --endDate="12/31/2021" --inst=8100 --kindat=10108,10109,10110,10111,10112,10113,10114,10115,10116,10117,10118,10119`
 
-### SWARM Ne
-* 2 Hz electron density data, 3 Satellites
-* FTP: Use WinSCP
+### DMSP Special Sensor Ultraviolet Spectrographic Imager (SSUSI)
+* https://ssusi.jhuapl.edu/
+* Several different data products from three satellites: f16, f17, f18
+* pretty good data availability for 2000-
+* I used it for auroral boundaries
+* Use WinSCP
+    * File Protocol: FTP
+    * Encyption: TLS / SSL Implicit
+    * Host name: spdf.gsfc.nasa.gov
+    * Port: 990?
+    * Anonymous Login: yes
+
+### SWARM
+* 2 Hz data, 3 Satellites
+* Use WinSCP
+    * File Protocol: FTP
+    * Encyption: No encryption
+    * Host name: swarm-diss.eo.esa.int
+    * Anonymous Login: yes
+
+### SuperMag
+* https://supermag.jhuapl.edu/
+* can download long dataset of indices
+* downloading long dataset of magnetic field measurements is difficult
