@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: Space Physics Data
-date: 4/24/2021
+date: '2021-04-24'
 subtitle: Where to find and how to download
 image: assets/preprocessing.png
 ---
