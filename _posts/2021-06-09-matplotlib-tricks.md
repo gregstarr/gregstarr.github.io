@@ -10,5 +10,5 @@ date: '2021-06-09'
 | Description | Code |
 | ----------- | ----------- |
 | Get style colors | `colors = plt.rcParams['axes.prop_cycle'].by_key()['color']`  |
-| Plot lines with colormap | <code>color_val = (min_dst + 50) / np.min(min_dst + 50)<br>colors = plt.cm.jet(color_val)<br>fig, ax = plt.subplots(figsize=(8, 8))<br>for i in range(len(mins)):<br>&nbsp;print(i)<br>&nbsp;ax.plot(t, np.nanmean(min_mlat_sea[i], axis=1), color=colors[i], lw=color_val[i]+.1, alpha=.5)</code>|
+| Plot lines with colormap | <code>colors = plt.cm.jet(values_0_to_1)<br>fig, ax = plt.subplots()<br>for i in range(len(lines)):<br>&nbsp;ax.plot(x, lines[i], color=colors[i])</code>|
 | asdasd | asdasd |
