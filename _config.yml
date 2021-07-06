@@ -4,7 +4,7 @@
 title: Greg Starr's Website
 
 # Short description of your site
-description: A site for my projects. 
+description: A site for my notes and projects. 
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
@@ -66,10 +66,10 @@ author:
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: false
   email: "gregstarr2@gmail.com"
-  facebook: greg.starr.9803
   github: gregstarr
+#  rss: false
+#  facebook: greg.starr.9803
 #  twitter: daattali
 #  reddit: yourname
 #  linkedin: daattali
